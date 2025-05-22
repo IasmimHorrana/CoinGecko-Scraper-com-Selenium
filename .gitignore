@@ -1,0 +1,27 @@
+# Bytecode Python e caches
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Logs
+*.log
+
+# Virtual environment - onde ficam suas dependências
+venv/
+.env/
+
+# Arquivos temporários do sistema
+.DS_Store
+Thumbs.db
+
+# ChromeDriver executável
+chromedriver.exe
+
+# Arquivos HTML gerados (se você gera algum temporário)
+*.html
+
+# Configurações do editor (opcional, adapte se quiser)
+.vscode/
+.idea/
+*.swp
