@@ -1,0 +1,1 @@
+# Deixa a pasta 'importável' como módulo Python
