@@ -25,8 +25,9 @@ def main():
     # A partir daqui vai a localização dos elementos, por exemplo:
     # element = driver.find_element(By.CSS_SELECTOR, ".class_do_elemento")
     
-    time.sleep(10)
+    input("Pressione Enter para fechar o navegador...")
     driver.quit()
+
 
 if __name__ == "__main__":
     main()
