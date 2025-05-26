@@ -10,4 +10,3 @@ def coletar_dados(driver):
         return tabelas[0]
     else:
         return pd.DataFrame()
-
