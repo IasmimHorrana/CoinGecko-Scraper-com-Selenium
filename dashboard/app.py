@@ -1,34 +1,28 @@
 import streamlit as st
 import pandas as pd
-import sqlite3
-import matplotlib.pyplot as plt
-import altair as alt
+import numpy as np
+import plotly.express as px
 
-# Carregar dados do banco
+# Carregar dados do CSV com cache
 @st.cache_data
 def carregar_dados():
-    conn = sqlite3.connect('dados_cripto.db')
-    df = pd.read_sql("SELECT * FROM criptomoedas", conn)
-    conn.close()
+    df = pd.read_csv('../data/dados_cripto.csv', sep=',', decimal='.')
+
+    # Defina apenas as colunas que de fato existem no seu CSV
+    colunas_numericas = [
+        'Preço',
+        'Capitalização de Mercado',
+        'FDV',
+        'Variação 24h',  # Remova ou comente se não existir
+        'Volume'  # Remova ou comente se não existir
+    ]
     return df
 
 df = carregar_dados()
 
-st.set_page_config(
-    page_title="Dashboard Cripto",
-    layout="wide"  # ← Expandir a largura da página
-)
+# Título e subtítulo
+st.title("📊 Dados de Scraping - Criptomoedas (CoinGecko)")
+st.subheader("Coletados via Web Scraping no dia 26/05/2025")
 
-# Layout principal
-st.title("📊 Análise de Criptomoedas - Snapshot Diário")
-st.markdown("Dashboard interativo com base nos dados extraídos do CoinGecko em um único dia.")
-
-aba1, aba2, aba3, aba4, aba5, aba6 = st.tabs([
-    "📈 Top 10 Moedas do Dia",
-    "📈 Top 10 em 7 dias",
-    "📉 Maiores Quedas 24h",
-    "🔍 Comparador de Moedas",
-    "💰 Volume vs Capitalização",
-    "⚠️ Radar de Risco x Potencial"
-])
-
+# Exibir tabela
+st.dataframe(df)
