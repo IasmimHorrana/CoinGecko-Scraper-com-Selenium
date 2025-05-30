@@ -9,6 +9,13 @@
 - [x] Extração de nome, preço e outras informações da tabela principal.
 - [x] Armazenamento dos dados em dicionários para manipulação com Python.
 
+## 📸 Visualização do Banco de Dados
+
+Abaixo, um exemplo da visualização dos dados extraídos no banco SQLite diretamente no VSCode:
+
+![Print do banco SQLite no VSCode](images/Screenshot_01.jpg)
+
+
 ## 📌 Tecnologias utilizadas
 
 - Python 3.10+
